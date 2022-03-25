@@ -3,11 +3,12 @@ docker build -t bilalyasin01/multi-server:latest -t bilalyasin01/multi-server:$S
 docker build -t bilalyasin01/multi-worker:latest -t bilalyasin01/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push bilalyasin01/multi-client:latest
-docker push bilalyasin01/multi-server:latest
-docker push bilalyasin01/multi-worker:latest
-
 docker push bilalyasin01/multi-client:$SHA
+
+docker push bilalyasin01/multi-server:latest
 docker push bilalyasin01/multi-server:$SHA
+
+docker push bilalyasin01/multi-worker:latest
 docker push bilalyasin01/multi-worker:$SHA
 
 kubectl apply -f k8s
